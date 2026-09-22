@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36511.14 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYAcademy_ApiProject", "MYAcademy_ApiProject\MYAcademy_ApiProject.csproj", "{71172D50-09DC-4770-B7AC-1DDB9134B041}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYAcademy_ApiWebUIProject", "MYAcademy_ApiWebUIProject\MYAcademy_ApiWebUIProject.csproj", "{F62A1C90-549E-4EBF-93A8-6B9462163F67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{71172D50-09DC-4770-B7AC-1DDB9134B041}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71172D50-09DC-4770-B7AC-1DDB9134B041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71172D50-09DC-4770-B7AC-1DDB9134B041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62A1C90-549E-4EBF-93A8-6B9462163F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62A1C90-549E-4EBF-93A8-6B9462163F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62A1C90-549E-4EBF-93A8-6B9462163F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62A1C90-549E-4EBF-93A8-6B9462163F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
