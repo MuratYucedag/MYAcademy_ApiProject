@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MYAcademy_ApiProject.Context;
 using MYAcademy_ApiProject.Entities;
 
@@ -52,6 +53,31 @@ namespace MYAcademy_ApiProject.Controllers
             _context.Products.Update(product);
             _context.SaveChanges();
             return Ok("Güncelleme başarılı");
+        }
+
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            int count = _context.Products.Count();
+            return Ok(count);
+        }
+
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory()
+        {
+            var values = _context.Products.Include(x => x.Category)
+                .Select(x => new
+                {
+                    x.ProductId,
+                    x.ProductName,
+                    x.ProductStock,
+                    x.ProductPrice,
+                    x.IsCritic,
+                    CategoryName = x.Category.CategoryName
+                })
+                .ToList();
+
+            return Ok(values);
         }
     }
 }

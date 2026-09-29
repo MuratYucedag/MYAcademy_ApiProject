@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Ürün Sayısı";
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card border-0 shadow-sm text-center">
+
+                <div class="card-body p-5">
+
+                    <div class="mb-3">
+                        <span class="badge bg-primary px-3 py-2">
+                            Ürün İstatistiği
+                        </span>
+                    </div>
+
+                    <h5 class="text-muted mb-3">
+                        Toplam Ürün Sayısı
+                    </h5>
+
+                    <h1 class="display-4 fw-bold mb-4">
+                        @ViewBag.ProductCount
+                    </h1>
+
+                    <p class="text-muted mb-4">
+                        Sistemde kayıtlı toplam ürün sayısını göstermektedir.
+                    </p>
+
+                    <a href="/Product/ProductList"
+                       class="btn btn-outline-primary">
+                        Ürün Listesine Git
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
