@@ -1,0 +1,16 @@
+﻿@model MYAcademy_ApiWebUIProject.Dtos.CategoryDtos.CreateCategoryDto
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <label>Kategori Adı</label>
+        <input type="text" asp-for="CategoryName" class="form-control" />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+</form>

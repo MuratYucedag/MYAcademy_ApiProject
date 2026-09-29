@@ -1,0 +1,120 @@
+﻿@model List<MYAcademy_ApiWebUIProject.Dtos.ProductDtos.ResultProductDto>
+
+@{
+    ViewData["Title"] = "Ürün Listesi";
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h3 class="mb-0">Ürün Listesi</h3>
+            <small class="text-muted">Sistemde kayıtlı ürünleri buradan yönetebilirsiniz.</small>
+        </div>
+
+        <a href="/Product/CreateProduct" class="btn btn-primary">
+            + Yeni Ürün
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Ürün Adı</th>
+                            <th>Stok</th>
+                            <th>Fiyat</th>
+                            <th>Durum</th>
+                            <th style="width:180px;">İşlemler</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @item.ProductId
+                                </td>
+
+                                <td>
+                                    <strong>@item.ProductName</strong>
+                                </td>
+
+                                <td>
+                                    @if (item.ProductStock <= 10)
+                                    {
+                                        <span class="badge bg-danger">
+                                            @item.ProductStock
+                                        </span>
+                                    }
+                                    else if (item.ProductStock <= 30)
+                                    {
+                                        <span class="badge bg-warning text-dark">
+                                            @item.ProductStock
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">
+                                            @item.ProductStock
+                                        </span>
+                                    }
+                                </td>
+
+                                <td>
+                                    @item.ProductPrice.ToString("N2") ₺
+                                </td>
+
+                                <td>
+                                    @if (item.IsCritic)
+                                    {
+                                        <span class="badge bg-danger">
+                                            Kritik Ürün
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">
+                                            Normal
+                                        </span>
+                                    }
+                                </td>
+
+                                <td>
+
+                                    <a href="/Product/UpdateProduct/@item.ProductId"
+                                       class="btn btn-sm btn-outline-warning">
+                                        Güncelle
+                                    </a>
+
+                                    <a href="/Product/DeleteProduct/@item.ProductId"
+                                       class="btn btn-sm btn-outline-danger"
+                                       onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?')">
+                                        Sil
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
